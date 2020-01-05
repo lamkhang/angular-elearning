@@ -1,0 +1,25 @@
+// IMPORT theo thu tu
+@import './Helper/variables';
+@import './Helper/mixin';
+
+@import './Base/reset';
+
+@import './Components/button';
+@import './Components/formSearch';
+@import './Components/sectionTitle';
+@import './Components/checked';
+
+@import './Layouts/header';
+@import './Layouts/cover';
+@import './Layouts/intro';
+@import './Layouts/courses';
+@import './Layouts/student';
+@import './Layouts/recommend';
+@import './Layouts/categories';
+@import './Layouts/studentSay';
+@import './Layouts/event';
+@import './Layouts/footer';
+
+@import './Layouts/detail';
+
+@import './Base/customize';

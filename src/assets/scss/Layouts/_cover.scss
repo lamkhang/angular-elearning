@@ -1,0 +1,62 @@
+.myCover{
+    background-image: url(./assets/img/cover.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 500px;
+    position: relative;
+    .cover_content{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 35%;
+        h1{
+            @include  text-style($color-white-0, $fs-4, $fw-bold);
+        }
+        .banner_description{
+            @include  text-style($color-white-0, $fs-1 + 5, $fw-normal);
+            margin-left: $spacing-3;
+        }
+        .formSearch{
+            background-color: $color-white-0;
+            .input-group{
+                .form-control{
+                    padding: $pd-2+5 $pd-1;
+                    border-radius: 0;
+                    border: none;
+                    &::placeholder{
+                        @include text-style($color-gray-2, $fs-2, $fw-normal);
+                    }
+                    &:focus{
+                        box-shadow: none;
+                    }
+                }
+                .input-group-append{
+                    .input-group-text{
+                        border: none;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mediaQuery('medium'){
+    .myCover{
+        .cover_content{
+            top: 30%;
+            left: 7%;
+            width: 60%;
+        }
+    }
+}
+@include mediaQuery('small'){
+    .myCover{
+        .cover_content{
+            top: 20%;
+            left: 3%;
+            width: 70%;
+        }
+    }
+}

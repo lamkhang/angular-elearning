@@ -1,0 +1,56 @@
+.event {
+  background-color: $color-white-0;
+  .contain-item-event {
+    .item-event {
+      padding: $spacing-2;
+      text-align: left;
+      min-height: 115px;
+      margin-bottom: $spacing-3;
+      border: 1px solid #ddd;
+      color: $color-black-0;
+      transition: all .4s ease-in-out;
+      opacity: .7;
+      .thumbnail-event {
+        width: 100%;
+        height: 100%;
+        max-width: 150px;
+        min-height: 82px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        margin-right: $spacing-3;
+        img {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: auto;
+          min-width: 100%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .contain-event-list-info{
+        .event-sub-title{
+        font-weight: $fw-bold-0;
+        margin-bottom: $spacing-0;
+        font-size: $fs-2 - 2;
+        color: #222;
+        @include elearning-line-clamp(2);
+      }
+      .event-time{
+        color: #333;
+        font-size: $fs-0;
+      }
+      }   
+      .angle-event-item{
+          transition: color .4s ease-in-out;
+        }
+      &:hover{
+        opacity: 1;
+        .angle-event-item{
+          color: #d72727;
+        }
+      }
+    }
+  }
+}

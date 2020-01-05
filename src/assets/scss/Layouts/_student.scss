@@ -1,0 +1,110 @@
+.myStudent {
+  margin-top: $mg-2;
+  .student_content {
+    min-width: 768px;
+    position: relative;
+    .student_course {
+      @include card_item();
+      .card {
+        margin-right: $spacing-1;
+        cursor: pointer;
+        img {
+          height: 130px;
+        }
+      }
+    }
+    .tooltipster-box {
+      position: absolute;
+      will-change: transform;
+      top: 35px;
+      height: 325px;
+      left: 20%;
+      // transform: translate3d(341px, 925px, 0px);
+      box-shadow: 0 4px 16px rgba(20, 23, 28, 0.25);
+      border-radius: 5px;
+      border: 1px solid #dedfe0;
+      padding: $spacing-3 $spacing-2;
+      color: #686f7a;
+      z-index: 1000;
+      font-size: $fs-0;
+      background: $color-white-0;
+      max-width: 335px;
+      .tooltipster-content {
+        i {
+          margin-right: 2px;
+        }
+        .tooltipster-author {
+          font-size: $fs-2;
+          margin-bottom: $spacing-1;
+          i {
+            font-size: 25px;
+            margin-right: $spacing-0;
+          }
+        }
+        .tooltipster-title {
+          color: $color-black-light;
+          font-size: $fs-2;
+          font-weight: 600;
+          margin-top: 0;
+          margin-bottom: $spacing-1;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .course-description {
+          .btn-add-card {
+            background: #ec5252;
+            color: $color-white-0;
+            cursor: pointer;
+            &:hover {
+              background: #521822;
+            }
+          }
+          .course__favorire {
+            font-size: $fs-2;
+            i {
+              color: #ec5252;
+            }
+          }
+        }
+      }
+
+      .tooltipster-arrow-left {
+        left: -10px;
+        position: absolute;
+        bottom: 170px;
+        .tooltipster-arrow-uncropped {
+          border: solid #dedfe0;
+          border-width: 0 1px 1px 0;
+          display: inline-block;
+          width: 5vmin;
+          background: $color-white-0;
+          height: 5vmin;
+          top: 50%;
+          left: 50%;
+          padding: 3px;
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      }
+      .tooltipster-arrow-right {
+        right: -10px;
+        position: absolute;
+        bottom: 170px;
+        .tooltipster-arrow-uncropped {
+          border: solid #dedfe0;
+          border-width: 0 1px 1px 0;
+          display: inline-block;
+          width: 5vmin;
+          background: $color-white-0;
+          height: 5vmin;
+          top: 50%;
+          left: 50%;
+          padding: 3px;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

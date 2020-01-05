@@ -1,0 +1,35 @@
+.myIntro{
+    background: linear-gradient(to right, $color-red-1,$color-red-0);
+    .intro-item{
+        .icon{
+            @include text-style($color-white-0, $fs-4 + 10, $fw-bold);
+            margin-right: $mg-2;
+        }
+        .icon_content{
+            padding-top: $pd-0;
+            p:first-child{
+                @include text-style($color-white-0, $fs-0 + 2, $fw-bold);
+                margin-bottom: 0;
+            }
+            p:last-child{
+                @include text-style($color-white-0, $fs-0, $fw-normal);
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+@include mediaQuery('large'){
+    .myIntro{
+        .intro-item{
+            .icon{
+                display: none;
+            }
+        }
+
+    }
+}
+@include mediaQuery('medium'){
+    .myIntro{
+        display: none;
+    }
+}

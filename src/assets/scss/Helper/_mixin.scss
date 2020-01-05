@@ -1,0 +1,118 @@
+@mixin text-style($color-text, $fs, $fw) {
+  color: $color-text;
+  font-size: $fs;
+  font-weight: $fw;
+}
+@mixin button-style($bd-color, $bg-color, $pd-y, $pd-x, $pd-radius) {
+  border: 1px solid $bd-color;
+  background: $bg-color;
+  padding: $pd-y $pd-x;
+  border-radius: $pd-radius;
+}
+@mixin button-hover($bg-color, $color, $bd-color) {
+  background: $bg-color;
+  color: $color;
+  border: 1px solid $bd-color;
+}
+@mixin form-search($bg-form-color, $bd-color) {
+  background-color: $bg-form-color;
+  cursor: pointer;
+  .form-control {
+    border-color: transparent;
+    background: transparent;
+    font-size: $fs-1;
+    padding: $pd-1 + $pd-1 $pd-1;
+    transition: none;
+    &:focus {
+      background: $color-white-0;
+      box-shadow: none;
+      border-left-color: $bd-color;
+      border-top-color: $bd-color;
+      border-bottom-color: $bd-color;
+    }
+    // + lấy 1 class cùng cấp bên dưới
+    &:focus + .input-group-append {
+      .input-group-text {
+        background: $color-white-0;
+        border-right-color: $bd-color;
+        border-top-color: $bd-color;
+        border-bottom-color: $bd-color;
+        &:hover {
+          background: $color-red-0;
+          color: $color-white-0;
+        }
+      }
+    }
+  }
+  .input-group-append {
+    .input-group-text {
+      border-color: transparent;
+      background: transparent;
+      color: $color-red-0;
+      &:hover {
+        background: $color-red-0;
+        color: $color-white-0;
+      }
+    }
+  }
+}
+@mixin card_item() {
+  .card-title {
+    @include text-style($color-black-0, $fs-0, $fw-bold);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 35px;
+  }
+  .card-text {
+    @include text-style($color-gray-4, $fs-1 -1, $fw-normal);
+    margin-bottom: $mg-0 + 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .rating {
+    margin-bottom: $mg-1;
+    .rating_star {
+      @include text-style($color-yellow, $fs-1, $fw-normal);
+      margin-right: $mg-0;
+    }
+    span:nth-child(6) {
+      @include text-style($color-gray-4, $fs-1, $fw-bold);
+      margin-right: $mg-0;
+    }
+    span:last-child {
+      @include text-style($color-gray-4, $fs-1, $fw-normal);
+    }
+  }
+  .price {
+    text-align: right;
+    .old-price {
+      @include text-style($color-gray-4, $fs-1, $fw-normal);
+      text-decoration: line-through;
+    }
+    .new-price {
+      @include text-style($color-black-0, $fs-2, $fw-bold-0);
+    }
+  }
+}
+@mixin elearning-line-clamp($numberLine) {
+  display: -webkit-box;
+  -webkit-line-clamp: $numberLine;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@mixin mediaQuery($screen) {
+  @if map-has-key($map: $breakpoints, $key: $screen) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`#{$screen} khong ton tai`";
+  }
+}

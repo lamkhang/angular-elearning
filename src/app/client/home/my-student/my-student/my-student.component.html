@@ -1,0 +1,49 @@
+<div class="myStudent">
+  <div class="student_content container">
+    <h3>Students are viewing</h3>
+    <div (mouseleave)="mouseLeaveAllCourse()">
+      <owl-carousel-o [options]="customOptions" class="student_course">
+        <ng-template *ngFor="let item of courseList" carouselSlide>
+          <app-my-student-item [course]="item" (tooltipsterEmitter)="handleIsShowTooltipster($event)">
+          </app-my-student-item>
+        </ng-template>
+      </owl-carousel-o>
+      <div *ngIf=" isShowTooltipsterCourse!=='' " (mouseenter)="mouseEnterTooltipster()"
+        (mouseleave)="mouseLeaveTooltipster()">
+        <div class="tooltipster-box" [ngStyle]="{'left': positionTooltipster}">
+          <div class="tooltipster-content">
+            <div class="tooltipster-author">
+              <i class="fa fa-user-alt"></i>
+              <span>{{tooltipsterCourse?.course?.nguoiTao.hoTen}}</span>
+            </div>
+            <h3 class="tooltipster-title">{{tooltipsterCourse?.course?.tenKhoaHoc}}: {{tooltipsterCourse?.course?.moTa}}
+            </h3>
+            <div class="course-description">
+              <p class="mb-2">
+                <span> <i class="fa fa-play"></i> 408 lectures </span>
+                <span> <i class="fa fa-clock"></i> 52 hours </span>
+                <span> <i class="fa fa-sliders-h"></i> All Levels </span>
+              </p>
+              <p class="mb-3">Become a full-stack web developer with just one course. HTML, CSS, Javascript, Node,
+                React,
+                MongoDB and more!</p>
+              <button class="btn w-100 btn-add-card mb-3" (click)="handleAddCourseToShoppingCard(tooltipsterCourse.course)" [disabled]="tooltipsterCourse?.disableAddCourseToShoppingCard" >Add to Card</button>
+              <p class="d-flex justify-content-between course__favorire mb-0">
+                <span>
+                  <i class="fa fa-heart"></i>
+                  <span style="font-size: 15px;">Add to favorite</span>
+                </span>
+
+                <span style="color: #ec5252;">9.99$</span>
+              </p>
+            </div>
+          </div>
+          <div class="tooltipster-arrow-left"
+            [ngClass]="{ 'tooltipster-arrow-left': isShowTooltipsterCourse==='left', 'tooltipster-arrow-right': isShowTooltipsterCourse==='right' }">
+            <div class="tooltipster-arrow-uncropped"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

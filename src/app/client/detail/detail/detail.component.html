@@ -1,0 +1,158 @@
+<section class="course-detail ">
+  <div class="row container mx-auto">
+    <div class="col-sm-9 course-left-col">
+      <div class="course-detail-lead">
+        <h3 class="course-lead__title">{{courseDetail?.tenKhoaHoc}}: {{courseDetail?.moTa}}</h3>
+        <div class="course-lead__headline"> Learn to create Machine Learning Algorithms in Python and R from two
+          Data Science experts. Code templates included. </div>
+        <div class="course-review">
+          <span class="course-review_title">Bestseller</span>
+          <span class="course-review__star">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-alt"></i>
+            4.5 (101,760 ratings)
+          </span>
+          <span>512,535 students enrolled </span>
+        </div>
+        <div class="mt-2">
+          <span class="mr-3"><i class="fa fa-user-cog mr-2"></i>{{courseDetail?.nguoiTao?.hoTen}}</span>
+          <span class="mr-3"><i class="fa fa-clock mr-2"></i> 6 weeks</span>
+          <span><i class="fab fa-leanpub mr-2"></i>6 lesson</span>
+        </div>
+      </div>
+      <div class="what-you-get">
+        <div class="what-you-get__content">
+          <div class="what-you-get__title section-title">What you'll learn</div>
+          <ul class="what-you-inner d-flex align-items-start justify-content-between flex-wrap">
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Master Machine Learning on Python & R</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Have a great intuition of many Machine Learning models</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Make accurate predictions</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Make powerful analysis</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Create strong added value to your business</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Handle specific topics like Reinforcement Learning, NLP and Deep Learning</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Know which Machine Learning model to choose for each type of problem</span>
+            </li>
+            <li class="what-you-get__item">
+              <i class="fa fa-check"></i>
+              <span>Handle advanced techniques like Dimensionality Reduction</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="course-curriculum">
+        <div class="curriculum-title section-title">Course content</div>
+        <div class="curriculum-detail">
+          <div class="curriculum-chapter">
+            <button class="btn">Applications of Machine Learning</button>
+            <div class="chapter-arrow"></div>
+          </div>
+          <div class="curriculum-chapter">
+            <button class="btn">Data processing</button>
+            <div class="chapter-arrow"></div>
+          </div>
+          <div class="curriculum-chapter">
+            <button class="btn">Regression</button>
+            <div class="chapter-arrow"></div>
+          </div>
+          <div class="curriculum-chapter">
+            <button class="btn">Classification</button>
+            <div class="chapter-arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="course-requirement">
+        <h3 class="section-title">Requirements</h3>
+        <ul class="requirements__list mb-2">
+          <li class="ml-3">No experience required</li>
+          <li class="ml-3">Suitable for all types of businesses (digital product, physical product, service, B2B, B2C).
+          </li>
+        </ul>
+      </div>
+      <div class="course-description">
+        <h3 class="section-title">Description </h3>
+        <p>Interested in the field of Machine Learning? Then this course is for you!</p>
+        <p>This course has been designed by two professional Data Scientists so that we can share our knowledge and help
+          you learn complex theory, algorithms and coding libraries in a simple way.</p>
+        <p>We will walk you step-by-step into the World of Machine Learning. With every tutorial you will develop new
+          skills and improve your understanding of this challenging yet lucrative sub-field of Data Science.</p>
+      </div>
+    </div>
+    <div class="col-sm-3 course-right-col">
+      <div class="course-image">
+        <img [src]="courseDetail?.hinhAnh" alt="" class="img-fluid w-100">
+      </div>
+      <div class="right-col__inner">
+        <div class="course-contain-price d-flex justify-content-between align-items-center">
+          <span class="course-price-favorite">
+            <i class="fa fa-heart"></i>
+            <span style="font-size: 15px;">Add to favorite</span>
+          </span>
+          <span>9.99$</span>
+        </div>
+        <button class="btn add-to-cart w-100" (click)="handleAddCourseToShoppingCard(courseDetail)" [disabled]="disableAddCourseToShoppingCard">Add to cart</button>
+        <button class="btn buy-box w-100">Buy now</button>
+        <div class="course-incentives">
+          <h5 class="incentives-header">This course includes</h5>
+          <ul class="incentives__list">
+            <li class="incentives__item">
+              <i class="fa fa-video"></i>
+              <span class="incentives__text">23.5 hours on-demand video</span>
+            </li>
+            <li class="incentives__item">
+              <i class="fa fa-file"></i>
+              <span class="incentives__text">36 articles </span>
+            </li>
+            <li class="incentives__item">
+              <i class="fa fa-file-download"></i>
+              <span class="incentives__text">4 downloadable resources</span>
+            </li>
+            <li class="incentives__item">
+              <i class="fa fa-life-ring"></i>
+              <span class="incentives__text">Full lifetime access</span>
+            </li>
+            <li class="incentives__item">
+              <i class="fa fa-question-circle"></i>
+              <span class="incentives__text">Full time support</span>
+            </li>
+          </ul>
+        </div>
+        <div class="course-social-share">
+          <div class="course-social-share__moreinfo">
+            <i class="fa fa-share mr-2"></i>
+            <span>Share</span>
+          </div>
+          <div class="course-social-share__links ">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="course-detail__background"></div>
+</section>

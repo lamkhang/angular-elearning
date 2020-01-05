@@ -1,0 +1,74 @@
+.studentSay{
+    background: $color-gray-5;
+    line-height: $line-height-0;
+    // h3{
+    //     @include text-style($color-black-0, $fs-3, $fw-bold-0);
+    //     padding: $pd-2 0 $pd-1;
+    // }
+    .studentSay-item{
+        background-color: $color-white-0;
+        margin-right: $mg-1;
+        padding: $pd-2;
+        min-height: 240px;
+        @include text-style($color-black-0, $fs-0 + 1, $fw-normal);
+        border-radius: 2px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 3px 0 rgba(20,23,28,.15);
+        .studentSay__info{
+            display: flex;
+            align-items: center;
+            margin-bottom: $mg-1;
+            img{
+                width:64px;
+                height: 64px;
+                border-radius: 50%;
+                margin-right: $mg-1;
+            }
+            span{
+                font-weight: $fw-bold;
+            }
+        }
+    }
+    .studentSay__byCompany{
+        .studentSay--udemy{
+            h5{
+                @include text-style($color-black-light, $fs-2 - 1, $fw-bold-0);
+                cursor: pointer;
+            }
+            p{
+                @include text-style($color-black-light, $fs-0 + 1, $fw-normal);
+                padding: $pd-1 0;
+            }
+        }
+        .studentSay--udemy__border{
+            border-right: 1px solid #dedfe0;
+        }
+    }
+}
+@include mediaQuery('large'){
+    .studentSay{
+        .studentSay-item{
+            min-height: 250px;
+        }
+    }
+}
+@include mediaQuery('medium'){
+    .studentSay{
+        .studentSay-item{
+            min-height: 310px;
+        }
+    }
+    .studentSay__byCompany{
+        .studentSay--udemy__border{
+            border-bottom: 1px solid #dedfe0;
+            border-right: 0!important;
+        }
+    }
+}
+@include mediaQuery('small'){
+    .studentSay{
+        .studentSay-item{
+            min-height: 200px;
+        }
+    }
+}

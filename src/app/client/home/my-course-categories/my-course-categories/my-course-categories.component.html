@@ -1,0 +1,26 @@
+<section class="myCourse">
+  <div class="course_content container">
+    <div class="row">
+      <div class="col-lg-3 col-xl-4 course_content__left">
+        <div class="course_intro">
+          <h2>Much selection of courses</h2>
+          <p>Learning to write programs stretches your mind, and helps you think better, creates a way of thinking
+            about things that I think is helpful in all domains</p>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-9 col-xl-8">
+        <ul class="nav nav-tabs myTab" role="tablist">
+          <li class="nav-item" *ngFor="let item of categoriesList" (click)="handleGetCourseByCategories(item.maDanhMuc)">
+            <span class="nav-link text-center" [ngClass]="{ active: isActiveCategories===item.maDanhMuc }">{{item.maDanhMuc}}</span>
+          </li>
+        </ul>
+          <owl-carousel-o [options]="customOwlCourseOptions" class="course_items">
+            <ng-template *ngFor="let item of courseByCategoriesList" carouselSlide >
+              <app-course-categories-item [course]="item"></app-course-categories-item>
+            </ng-template>
+          </owl-carousel-o>
+
+      </div>
+    </div>
+  </div>
+</section>

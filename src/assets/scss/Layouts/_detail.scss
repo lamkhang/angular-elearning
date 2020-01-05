@@ -1,0 +1,209 @@
+.course-detail {
+  padding: 30px  0;
+  position: relative;
+  .course-left-col {
+    .course-detail-lead {
+      color: $color-white-0;
+      .course-lead__title {
+        font-size: 36px;
+        line-height: 41px;
+        font-weight: $fw-bold-0;
+        margin-bottom: $spacing-1;
+      }
+      .course-lead__headline {
+        font-size: 21px;
+        line-height: 27px;
+      }
+      .course-review {
+        margin-top: $spacing-0;
+        .course-review_title {
+          position: relative;
+          margin-right: $spacing-3;
+          background: $color-yellow;
+          color: #29303b;
+          border-radius: 4px;
+          padding: 2px 10px;
+          &:after {
+            content: "";
+            height: 15px;
+            position: absolute;
+            top: 4px;
+            transform: rotate(45deg);
+            width: 15px;
+            right: -7px;
+            background: inherit;
+          }
+        }
+        .course-review__star {
+          margin-right: $spacing-3;
+          i {
+            color: $color-yellow;
+          }
+        }
+      }
+    }
+    .what-you-get {
+      // background-color:#f9f9f9;
+      // border: 1px solid#dedfe0;
+      padding: 30px 0 10px;
+
+      .what-you-get__content {
+        .what-you-inner {
+          .what-you-get__item {
+            list-style: none;
+            width: 45%;
+            i {
+              margin-right: $spacing-1;
+              color: #8a92a3;
+            }
+          }
+        }
+      }
+    }
+    .course-curriculum {
+      .curriculum-detail {
+        .curriculum-chapter {
+          box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+          // box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          transition: box-shadow 0.4s ease-in-out;
+          margin: $spacing-2 $spacing-1;
+          position: relative;
+
+          // border-bottom: none;
+          // display: flex;
+          // align-items: center;
+          // padding: 0;
+          // max-height: 54px;
+          button {
+            color: #515151;
+            background-color: #fff;
+            border: 0;
+            text-align: left;
+            height: 50px;
+            padding-left: 3.25rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            &:hover {
+              color: #d72727;
+            }
+          }
+          .chapter-arrow {
+            content: "";
+            position: absolute;
+            border-left: 0.6rem solid #222;
+            border-top: 0.3rem solid transparent;
+            border-bottom: 0.3rem solid transparent;
+            height: 0;
+            width: 0;
+            top: 22px;
+            left: 1.875rem;
+          }
+          &:hover {
+            // box-shadow: 0 3px 10px rgba(0,0,0,.2);
+            box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+  .course-right-col {
+    background-color: #fff;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+      0 3px 1px 0 rgba(20, 23, 28, 0.1);
+    border-radius: 4px;
+    color: #505763;
+    padding: 3px;
+    max-height: 670px;
+    .right-col__inner {
+      padding: 15px 30px;
+      .course-contain-price{
+        .course-price-favorite{
+          i{
+            color: #ec5252;
+            margin-right: $spacing-0;
+          }
+        }
+        span:last-child{
+          font-size: 24px;
+        }
+      }
+      button {
+        padding: $spacing-1 0px;
+        margin: $spacing-1 0;
+        transition: color 0.2s;
+      }
+      .add-to-cart {
+        color: #fff;
+        background-color: #ec5252;
+        border: 1px solid transparent;
+
+        &:hover {
+          background: #992337;
+        }
+      }
+      .buy-box {
+        border: 1px solid #dee2e6;
+        &:hover {
+          color: #383838;
+          background: #d5d5d5;
+        }
+      }
+      .course-incentives {
+        padding: $spacing-2 0;
+        .incentives-header {
+          font-size: 16px;
+        }
+        .incentives__list {
+          .incentives__item {
+            list-style: none;
+            font-size: $fs-1;
+            padding: 2px 3px;
+            i {
+              color: #8a92a3;
+              width: 20px;
+            }
+          }
+        }
+      }
+      .course-social-share {
+        border-top: 2px solid #e8e9eb;
+        padding: $spacing-2 0;
+        text-align: center;
+        .course-social-share__links {
+          display: flex;
+          margin-top: $spacing-2;
+          justify-content: space-evenly;
+          a {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            border: 1px solid #909090;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+            color: #909090;
+            font-size: 1rem;
+            &:hover{
+              color: #222;
+              border: 1px solid #222;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .course-detail__background{
+    position: absolute;
+    background: #2a2a2a;
+    height: 19%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+}

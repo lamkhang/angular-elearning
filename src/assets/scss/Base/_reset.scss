@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+body{
+    @include text-style($color-black-0, $fs-0, $fw-normal);
+    font-family: 'Open Sans', sans-serif;
+    line-height: $line-height-0;
+    background-color: $color-white-0;
+}

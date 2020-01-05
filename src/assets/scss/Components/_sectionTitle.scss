@@ -1,0 +1,4 @@
+.section-title {
+  @include text-style($color-black-0, $fs-3, $fw-bold-0);
+  padding: $pd-2 0 $pd-1;
+}

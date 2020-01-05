@@ -1,0 +1,23 @@
+.btnGroup{
+    &:hover{
+        text-decoration: none;
+    }
+}
+.btn-white{
+    @include button-style($color-gray-4, $color-white-0, $pd-1 + 1, $pd-1 + 2, $border-radius);
+    @include text-style($color-gray-4, $fs-0, $fw-bold-0);
+    &:hover{
+        @include button-hover($color-white-0, $color-black-0, $color-black-0);
+        text-decoration: none;
+    }
+}
+.btn-red{
+    @include button-style($color-white-0, $color-red-0, $pd-1 + 1, $pd-1 + 2, $border-radius);
+    @include text-style($color-white-0, $fs-0, $fw-bold-0);
+    &:hover{
+        @include button-hover($color-red-1, $color-white-0, $color-red-1);
+        text-decoration: none;
+    }
+}
+
+

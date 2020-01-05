@@ -1,0 +1,22 @@
+<div class="card mr-2" [routerLink]=" '/course-detail/' + course?.maKhoaHoc ">
+  <img class="card-img-top" [src]="course?.hinhAnh" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">{{course?.tenKhoaHoc}}: {{course?.moTa}}</h4>
+    <p class="card-text">{{course?.nguoiTao.hoTen}}</p>
+    <div class="rating">
+      <div class="rating_star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-alt"></i>
+        <span>4.5</span>
+        <span>(179,971)</span>
+      </div>
+    </div>
+    <div class="price">
+      <span class="old-price">$194.99</span>
+      <span class="new-price">$9.99</span>
+    </div>
+  </div>
+</div>

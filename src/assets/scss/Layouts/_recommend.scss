@@ -1,0 +1,32 @@
+.recommend{
+    background-color: $color-black-0;
+    min-height: 300px;
+    .recommend-border{
+        background: linear-gradient(to right, $color-red-1, $color-purple);
+        height: 15px;
+    }
+    .recommend-item{
+        @include text-style($color-gray-5, $fs-3 + 8, $fw-normal);
+        padding: $pd-2 0;
+        align-items: center;
+        h3{
+            @include text-style($color-gray-5, $fs-3, $fw-bold);
+        }
+        p{
+            @include text-style($color-gray-5, $fs-0, $fw-normal);
+        }
+        button{
+            border: none;
+        }
+    }
+}
+@include mediaQuery('large'){
+    .recommend{
+        .recommend__responsive{
+            display: none;
+        }
+        .recommend-item{
+            padding-top: 80px;
+        }
+    }
+}

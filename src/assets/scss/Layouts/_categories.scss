@@ -1,0 +1,29 @@
+.categories-content{
+    // h3{
+    //     @include text-style($color-black-0, $fs-3, $fw-bold-0);
+    //     line-height: 1.33rem;
+    //     margin-bottom: $mg-1;
+    // }
+    .categories-item{
+        border-color: #ddd;
+        @include text-style(#14171c, $fs-0, $fw-normal);
+        box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+        transition: all .2s;
+        padding: $pd-1 + 5;
+        position: relative;
+        cursor: pointer;
+        .categories_icon{
+            color: $color-gray-4;
+            font-size: $fs-4 - 8;
+            background-color: #fff;
+        }
+        span{
+            position: absolute;
+            left: 27%;
+            top: 32%;
+        }
+        &:hover{
+            box-shadow: 0 2px 8px 2px rgba(20,23,28,.15);
+        }
+    }
+}
