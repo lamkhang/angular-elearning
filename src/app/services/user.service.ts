@@ -37,7 +37,12 @@ export class UserService {
       localStorage.setItem("userClient", JSON.stringify(result));
       this.userClient = result;
       this.userClientEmitter.emit(this.userClient);
-      callback()
+      this.toastr.success("Login success", "",{
+        timeOut: 3000,
+        positionClass: 'toast-top-center',
+        progressBar: true,
+      });
+      callback();
     }, (err) => {
       console.log(err);
       this.toastr.error(err.error, "Oops",{

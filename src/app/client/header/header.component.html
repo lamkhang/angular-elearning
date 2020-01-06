@@ -153,7 +153,7 @@
     </div>
   </div>
   <!-- Modal Sign Up -->
-  <div class="modal fade pt-5" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  <div class="modal fade pt-3" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true" [ngClass]="{'show d-block': isShowHeaderModal==='signUp'}">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -225,7 +225,7 @@
           </div>
 
           <div class="modal-footer d-flex justify-content-center">
-            <button mat-stroked-button type="submit" [disabled]="formSignUp.invalid">Sign Up</button>
+            <button mat-stroked-button color="warn" type="submit" [disabled]="formSignUp.invalid">Sign Up</button>
           </div>
         </form>
       </div>

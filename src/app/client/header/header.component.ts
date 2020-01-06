@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ICourse } from 'src/app/models/course';
 import { CourseService } from 'src/app/services/course.service';
 import { NgForm } from '@angular/forms';
-import {FormControl, Validators} from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -45,16 +44,14 @@ export class HeaderComponent implements OnInit {
   }
   signInHandler(formSignIn: NgForm):void{
     if(formSignIn.valid){
-      this._userService.signIn(formSignIn.value.taiKhoan, formSignIn.value.matKhau , () => {formSignIn.resetForm()})
+      this._userService.signIn(formSignIn.value.taiKhoan, formSignIn.value.matKhau , () => {formSignIn.resetForm()});
+      this.isShowHeaderModal = "";
     }
   }
-  signUpHandler(formSignIn: NgForm):void{
-    console.log(formSignIn.value);
-
-
-  }
-  test(email):void{
-    console.log(email);
-
+  signUpHandler(formSignUp: NgForm):void{
+    if(formSignUp.valid){
+      let value = { ...formSignUp.value, maNhom: "GP03"}
+      this._userService.signUp(value, () => {formSignUp.resetForm()});
+    }
   }
 }
