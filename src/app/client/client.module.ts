@@ -11,8 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 
 
 const Routes: Routes = [
-  {path: "", component: ClientComponent, loadChildren: "./home/home.module#HomeModule"},
-  {path: "course-detail" , component: ClientComponent, loadChildren: "./detail/detail.module#DetailModule"},
+  { path: "", component: ClientComponent, loadChildren: "./home/home.module#HomeModule" },
+  { path: "course-detail" , component: ClientComponent, loadChildren: "./detail/detail.module#DetailModule" },
+  { path: "search", component: ClientComponent, loadChildren: "./search/search.module#SearchModule" },
+  { path: "client", component: ClientComponent, loadChildren: "./client-profile/client-profile.module#ClientProfileModule"}
 
 ]
 @NgModule({

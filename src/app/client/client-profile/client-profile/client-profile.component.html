@@ -1,0 +1,29 @@
+<section class="profile-client container my-4">
+  <div class="row">
+    <div class="col-md-2 profile-client__menu px-0">
+      <div class="user-avatar py-3 px-2">
+        <img src="https://www.jumpstarttech.com/files/2018/08/Network-Profile.png" alt="" class="img-fluid">
+        <h3 class="text-center font-weight-bold mt-3">lbk</h3>
+      </div>
+      <ul>
+        <li (click)="handleShowSessionProfile('view-profile')" [ngClass]="{ 'active': isShowSessionProfile==='view-profile' }">View Profile</li>
+        <li (click)="handleShowSessionProfile('edit-profile')" [ngClass]="{ 'active': isShowSessionProfile==='edit-profile' }">Edit Profile</li>
+        <li (click)="handleShowSessionProfile('my-course-profile')" [ngClass]="{ 'active': isShowSessionProfile==='my-course-profile' }">My Course</li>
+        <li (click)="handleShowSessionProfile('close-account-profile')" [ngClass]="{ 'active': isShowSessionProfile==='close-account-profile' }">Close Account</li>
+      </ul>
+    </div>
+    <div class="col-md-10 form-wrapper px-0">
+      <h3 class="text-center mt-4">{{titleSessionProfile}}</h3>
+      <app-view-profile *ngIf=" isShowSessionProfile==='view-profile' "></app-view-profile>
+      <app-edit-profile *ngIf=" isShowSessionProfile==='edit-profile' "></app-edit-profile>
+      <app-my-course-profile *ngIf=" isShowSessionProfile==='my-course-profile' "></app-my-course-profile>
+      <app-close-account-profile *ngIf=" isShowSessionProfile==='close-account-profile' "></app-close-account-profile>
+
+
+
+
+
+
+    </div>
+  </div>
+</section>

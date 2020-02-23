@@ -8,6 +8,7 @@ import { MyStudentModule } from './my-student/my-student.module';
 import { MyCourseCategoriesModule } from './my-course-categories/my-course-categories.module';
 import { CategoriesDetailComponent } from './categories-detail/categories-detail.component';
 import { EventContentComponent } from './event-content/event-content.component';
+import { FormsModule } from '@angular/forms';
 
 const Routes: Routes = [
   {path: "", component: HomeComponent},
@@ -19,6 +20,7 @@ const Routes: Routes = [
     CommonModule,
     MyCourseCategoriesModule,
     MyStudentModule,
+    FormsModule,
     RouterModule.forChild(Routes)
   ],
   exports: [

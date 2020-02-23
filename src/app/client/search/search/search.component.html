@@ -1,0 +1,10 @@
+<section id="search" class="container my-4">
+  <h5 class="key-search" *ngIf="courseList.length > 0; else notFindResult">results for <strong>{{keySearch}}</strong> </h5>
+  <div class="search-result-page">
+    <div class="search-course-item" *ngFor="let item of courseList">
+      <app-search-course-item [course]="item"></app-search-course-item>
+    </div>
+  </div>
+  <ng-template #notFindResult><span style="font-size: 24px; font-weight: bold;">Sorry, we couldn't find any results for "{{keySearch}}"</span></ng-template>
+
+</section>

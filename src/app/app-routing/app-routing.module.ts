@@ -10,7 +10,7 @@ const Routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(Routes)
+    RouterModule.forRoot(Routes, { onSameUrlNavigation: 'reload' } )
   ]
 })
 export class AppRoutingModule { }

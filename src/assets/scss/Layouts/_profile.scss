@@ -1,0 +1,107 @@
+.profile-client{
+  .profile-client__menu{
+    box-shadow: 1px 1px #dedfe0 inset,0 -1px #dedfe0 inset;
+    ul{
+      list-style: none;
+      li{
+        padding: $spacing-0 $spacing-2;
+        cursor: pointer;
+        &:hover{
+          background-color: #ececec;
+        }
+      }
+      li.active{
+        font-size: 20px;
+        background-color: #ececec;
+      }
+    }
+  }
+  .form-wrapper{
+    border: 1px solid #dedfe0;
+    .form-section{
+      padding: 10px 140px 40px;
+    }
+    .myCourse-fields-wrapper{
+      .my-course-item {
+        border-top: 1px solid #dedfe0;
+        padding: 16px 4px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        .my-course-item__content{
+          .my-course-item__title{
+            h3{
+              font-size: $fs-2;
+              font-weight: $fw-bold-0;
+            }
+          }
+          .my-course-item__meta{
+            color: $color-gray-4;
+            font-size: $fs-1;
+            margin-bottom: $spacing-0;
+            span{
+              margin-right: $spacing-1;
+              i{
+                margin-right: 2px;
+              }
+            }
+            .course-review_title {
+              position: relative;
+              background: $color-yellow;
+              color: #29303b;
+              border-radius: 4px;
+              padding: 2px 10px;
+              margin-right: $spacing-3;
+              &:after {
+                content: "";
+                height: 13px;
+                position: absolute;
+                top: 3px;
+                transform: rotate(45deg);
+                width: 13px;
+                right: -5px;
+                background: inherit;
+              }
+            }
+
+          }
+          .my-course-item__headline{
+            color: $color-gray-4;
+            font-size: $fs-1;
+          }
+        }
+        .my-course-item__price-rating{
+          font-size: $fs-1;
+          .course-price-text{
+            font-weight: $fw-bold-0;
+            font-size: 20px;
+          }
+          .course-review__star{
+            color: $color-gray-4;
+            i {
+              color: $color-yellow;
+            }
+          }
+          .course-rating{
+            color: $color-gray-4;
+          }
+        }
+        &:hover{
+          background-color: #ddd;
+        }
+      }
+    }
+    .close-fields-wrapper{
+      box-shadow: 0 1px 0 0 #dedfe0,0 -1px 0 0 #dedfe0;
+    }
+    .profile-fields-wrapper{
+      p{
+        margin-bottom: 7px;
+        span{
+          display: inline-block;
+          width: 150px;
+        }
+      }
+    }
+
+  }
+}

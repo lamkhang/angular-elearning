@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   .navbar-brand {
+    cursor: pointer;
     img {
       width: 110px;
     }
@@ -31,37 +32,6 @@
     }
     &:hover {
       background-color: $color-gray-1;
-    }
-  }
-  .dropdown-menu {
-    margin-top: $spacing-2;
-    .dropdown-item {
-      font-size: $fs-0;
-      i {
-        color: #8a92a3;
-        width: 30px;
-      }
-      &:hover {
-        background-color: #f2f3f5;
-      }
-    }
-    &::before,
-    &::after {
-      border-style: solid;
-      border-width: 0 10px 13px;
-      content: "" !important;
-      height: 0;
-      position: absolute;
-      left: 14px;
-      width: 0;
-    }
-    &::before {
-      top: -14px;
-      border-color: transparent transparent #e8e9eb transparent;
-    }
-    &::after {
-      top: -12px;
-      border-color: transparent transparent #fff transparent;
     }
   }
 }
@@ -110,9 +80,9 @@
           overflow: hidden;
         }
       }
-      &:hover{
-          background: #f2f3f5;
-        }
+      &:hover {
+        background: #f2f3f5;
+      }
     }
     .shopping-cart-total {
       padding: 0 10px;
@@ -165,6 +135,40 @@
       background: rgba(20, 23, 28, 0.05);
       border-color: rgba(20, 23, 28, 0.05);
     }
+  }
+}
+.dropdown-menu,
+.user-menu {
+  background-color: #fff;
+  .dropdown-item,
+  .user-item {
+    font-size: $fs-0;
+    cursor: pointer;
+    i {
+      color: #8a92a3;
+      width: 30px;
+    }
+    &:hover {
+      background-color: #f2f3f5;
+    }
+  }
+  &::before,
+  &::after {
+    border-style: solid;
+    border-width: 0 10px 13px;
+    content: "" !important;
+    height: 0;
+    position: absolute;
+    left: 14px;
+    width: 0;
+  }
+  &::before {
+    top: -14px;
+    border-color: transparent transparent #e8e9eb transparent;
+  }
+  &::after {
+    top: -12px;
+    border-color: transparent transparent #fff transparent;
   }
 }
 @include mediaQuery("extra-large") {

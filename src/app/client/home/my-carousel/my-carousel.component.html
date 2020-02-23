@@ -7,15 +7,15 @@
           <li>Data Analysis 30/12</li>
           <li>Web front end Development 30/12</li>
       </ul>
-      <form action="#" class="formSearch">
+      <form action="#" class="formSearch" #formSearchCarousel="ngForm" (submit)="searchHandler(formSearchCarousel)">
           <div class="input-group">
               <input type="text" class="form-control" placeholder="What do you want to learn?"
-                  aria-label="Recipient's username" aria-describedby="button-addon2">
+                  aria-label="Recipient's username" aria-describedby="button-addon2" name="keySearch" ngModel #keySearch="ngModel">
               <div class="input-group-append">
-                  <span class="input-group-text" id="button-addon2">
+                  <button class="input-group-text" id="button-addon2">
                       <i class="fa fa-search">
                       </i>
-                  </span>
+                  </button>
               </div>
           </div>
       </form>

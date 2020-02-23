@@ -20,9 +20,11 @@ export class MyCourseCategoriesComponent implements OnInit {
     this._courseService.categoriesArrEmitter.subscribe( (categoriesList: ICategories[]) => {
       this.categoriesList =  categoriesList;
     }, (err) => {console.log(err)} );
+
     this._courseService.courseByCategoriesEmitter.subscribe( (courseByCategoriesList: ICourse[]) => {
       this.courseByCategoriesList = courseByCategoriesList;
-    }, (err) => {console.log(err)} )
+    }, (err) => {console.log(err)} );
+
     this._courseService.getCategoriesArr();
     this._courseService.getCourseByCategories(this.isActiveCategories);
   }

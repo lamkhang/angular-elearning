@@ -1,7 +1,7 @@
 <header>
   <nav class="header navbar navbar-expand-md navbar-light headerClass">
     <div class="header_left col-xl-7  col-lg-9 col-md-8 col-sm-6 col-5">
-      <a class="navbar-brand" href="#"><img src="./../../../assets/img/logo-coral.svg" alt=""></a>
+      <div class="navbar-brand" href="" routerLink="/"><img src="./../../../assets/img/logo-coral.svg" alt=""></div>
       <div class="dropdown">
         <!-- <span class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Catelogries
@@ -9,45 +9,45 @@
         <span href="#" class="catelogries mr-4 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
           (click)="handleShoweaderDropdownMenu()"><i class="fa fa-th mr-2"></i>Catelogries</span>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" [ngClass]="{show: isShowHeaderDropdownMenu}">
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" routerLink="/search/BackEnd">
             <i class="fa fa-server"></i>
             <span>Back End</span>
           </a>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" routerLink="/search/DiDong">
             <i class="fa fa-mobile-alt"></i>
             <span>Di Động</span>
           </a>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" routerLink="/search/Design">
             <i class="fa fa-pencil-alt"></i>
             <span>Design</span>
           </a>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" routerLink="/search/FrontEnd">
             <i class="fa fa-desktop"></i>
             <span>Front End</span>
           </a>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" routerLink="/search/FullStack">
             <i class="fa fa-code"></i>
             <span>Full Stack</span>
           </a>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" routerLink="/search/TuDuy">
             <i class="fa fa-brain"></i>
             <span>Tư duy</span>
           </a>
         </div>
       </div>
 
-      <form action="#" class="formSearch">
+      <form action="#" class="formSearch" #formSearch="ngForm" (submit)="searchHandler(formSearch)">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for Coureses" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
+            aria-describedby="button-addon2" name="keySearch" ngModel #keySearch="ngModel" >
           <div class="input-group-append">
-            <span class="input-group-text" id="button-addon2">
-              <i class="fa fa-search">
-              </i>
-            </span>
+            <button class="input-group-text" id="button-addon2"  type="submit">
+              <i class="fa fa-search"></i>
+            </button>
           </div>
         </div>
       </form>
+
     </div>
     <div class="header_right col-xl-5 col-lg-3 col-md-4 col-sm-4">
       <ul class="navbar-nav justify-content-between align-items-center">
@@ -62,13 +62,13 @@
         </li>
         <li class="nav-item" (mouseenter)="handleIsShowShoppingCartMenu(true)"
           (mouseleave)="handleIsShowShoppingCartMenu(false)">
-          <a class="nav-link" href="#">
+          <div class="nav-link" style="cursor: pointer;">
             <i class="fa fa-shopping-cart"></i>
             <span class="position-absolute rounded-circle text-center" *ngIf="courseArrInShoppingCard.length!==0"
               style="top: 2px; background: #ec5252; width: 20px; height: 20px; line-height: 20px; font-size: 13px;color: #fff; transform: translateX(-5px);">{{courseArrInShoppingCard.length}}</span>
-          </a>
+          </div>
           <div class="shopping-cart-menu" *ngIf="isShowShoppingCartMenu && (courseArrInShoppingCard.length!==0) ">
-            <div href="" class="shopping-cart-item d-flex align-items-center  text-decoration-none"
+            <div class="shopping-cart-item d-flex align-items-center  text-decoration-none"
               *ngFor="let item of courseArrInShoppingCard">
               <img [src]="item.hinhAnh" alt="">
               <div class="shopping-cart-item_desc w-100">
@@ -76,7 +76,7 @@
                 <p style="color: #686f7a; font-size: 11px;">by {{item.nguoiTao.hoTen}}</p>
                 <p style="color: #ec5252; font-size: 18px;">9.99$</p>
               </div>
-              <div class="item-cart-remove mr-2" style="cursor: pointer;"
+              <div class="item-cart-remove mr-2" style="cursor: pointer; font-size: 24px;"
                 (click)="handleRemoveCourseOnShoppingCard(item)">x</div>
             </div>
             <div class="shopping-cart-total">
@@ -91,10 +91,31 @@
           </div>
         </li>
         <li class="nav-item">
-          <div class="btnGroup" href="#">
-            <button class="btn btn-white mr-1" (click)="handleOpenHeaderModal('signIn')">Log in</button>
+          <div class="btnGroup d-flex align-items-center">
+            <button class="btn btn-white mr-1" (click)="handleOpenHeaderModal('signIn')" *ngIf="!isSignIn; else clientName">Log in</button>
+            <ng-template #clientName>
+              <div (mouseenter)="handleIsShowUserMenu(true)" (mouseleave)="handleIsShowUserMenu(false)" class="position-relative">
+                <div style="color: #505763; font-size: 13px; cursor: pointer;" class="d-inline-block mr-2" >
+                  <i class="fa fa-user mr-1"></i> Hello {{ isSignIn }}
+                </div>
+
+                <div class="user-menu position-absolute" *ngIf="isShowUserMenu">
+                  <div class="dropdown-item" routerLink="/client/profile">
+                    <i class="fa fa-address-card"></i>
+                    <span>Profile</span>
+                  </div>
+                  <div class="dropdown-item" (click)="handleLogOut()">
+                    <i class="fa fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                  </div>
+                </div>
+              </div>
+
+            </ng-template>
+
             <button class="btn btn-red" (click)="handleOpenHeaderModal('signUp')">Sign up</button>
           </div>
+
         </li>
 
       </ul>
@@ -118,20 +139,20 @@
             <div class="form-group d-flex align-items-center justify-content-between">
               <i class="fas fa-id-card prefix grey-text"></i>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="ID" name="taiKhoan" ngModel #taiKhoan="ngModel" required>
-                <mat-error *ngIf="taiKhoan.errors && (taiKhoan.dirty || taiKhoan.touched)">
-                  <span *ngIf="taiKhoan.errors.required">ID is <strong>required</strong></span>
+                <input matInput placeholder="ID" name="taiKhoan" ngModel #taiKhoanLogin="ngModel" required>
+                <mat-error *ngIf="taiKhoanLogin.errors && (taiKhoanLogin.dirty || taiKhoanLogin.touched)">
+                  <span *ngIf="taiKhoanLogin.errors.required">ID is <strong>required</strong></span>
                 </mat-error>
               </mat-form-field>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between">
               <i class="fas fa-lock prefix grey-text"></i>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password" name="matKhau" ngModel #matKhau="ngModel" required minlength="5"
+                <input matInput placeholder="Password" name="matKhau" ngModel #matKhauLogin="ngModel" required minlength="5"
                   maxlength="16">
-                <mat-error *ngIf="matKhau.errors && (matKhau.dirty || matKhau.touched)">
-                  <span *ngIf="matKhau.errors.required">Password is <strong>required</strong></span>
-                  <span *ngIf="matKhau.errors.minlength || matKhau.errors.maxlength"> Password length must be between
+                <mat-error *ngIf="matKhauLogin.errors && (matKhauLogin.dirty || matKhauLogin.touched)">
+                  <span *ngIf="matKhauLogin.errors.required">Password is <strong>required</strong></span>
+                  <span *ngIf="matKhauLogin.errors.minlength || matKhauLogin.errors.maxlength"> Password length must be between
                     <strong>6 and 16</strong></span>
                 </mat-error>
               </mat-form-field>

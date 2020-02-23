@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DetailComponent } from './detail/detail.component';
 import { RouterModule, Routes } from "@angular/router";
 const Routes: Routes = [
-  {path: ":id", component: DetailComponent}
+  { path: ":id", component: DetailComponent }
 ]
 
 @NgModule({
@@ -11,7 +11,6 @@ const Routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(Routes),
-    // RouterModule
   ],
   exports: [DetailComponent]
 })
