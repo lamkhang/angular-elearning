@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { IUserProfile } from 'src/app/models/user';
 
 @Component({
   selector: 'app-client-profile',
@@ -9,11 +10,27 @@ import { UserService } from 'src/app/services/user.service';
 export class ClientProfileComponent implements OnInit {
 
   constructor(private _userService: UserService) { }
+  userClientProfile: IUserProfile;
   isShowSessionProfile: string = "view-profile";
-  titleSessionProfile: string = "Public Profile"
+  titleSessionProfile: string = "Public Profile";
   ngOnInit() {
-    let userClient = JSON.parse(localStorage.getItem("userClient"))
-    this._userService.getInfoAccountClient(userClient.taiKhoan);
+    let userClient = JSON.parse(localStorage.getItem("userClient"));
+    /*
+    this._userService.getInfoAccountClient(userClient.taiKhoan)
+      .subscribe((result: any) => {
+        console.log(result);
+      }, (err) => {
+        console.log(err);
+
+      });
+      */
+     this._userService.getInfoAccountClientAxios();
+     this._userService.userClientProfileEmitter.subscribe( (result) => {
+       this.userClientProfile = result.data;
+     }, (err) => {
+       console.log(err);
+
+     } );
 
   }
   handleShowSessionProfile(sessionProfile: string): void {

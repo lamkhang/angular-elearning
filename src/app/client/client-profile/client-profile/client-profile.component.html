@@ -14,8 +14,8 @@
     </div>
     <div class="col-md-10 form-wrapper px-0">
       <h3 class="text-center mt-4">{{titleSessionProfile}}</h3>
-      <app-view-profile *ngIf=" isShowSessionProfile==='view-profile' "></app-view-profile>
-      <app-edit-profile *ngIf=" isShowSessionProfile==='edit-profile' "></app-edit-profile>
+      <app-view-profile *ngIf=" isShowSessionProfile==='view-profile' " [viewUserClient]="userClientProfile"></app-view-profile>
+      <app-edit-profile *ngIf=" isShowSessionProfile==='edit-profile' " [editUserClient]="userClientProfile"></app-edit-profile>
       <app-my-course-profile *ngIf=" isShowSessionProfile==='my-course-profile' "></app-my-course-profile>
       <app-close-account-profile *ngIf=" isShowSessionProfile==='close-account-profile' "></app-close-account-profile>
 

@@ -89,7 +89,7 @@ export class HeaderComponent implements OnInit {
     })
     .onShown.subscribe( () => {
       $(".confirmClientLogout").click(() => {
-        console.log(this);
+        // console.log(this);
         this.toastr.clear();
         localStorage.removeItem('userClient');
         this.isSignIn = "";

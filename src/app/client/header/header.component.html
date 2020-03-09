@@ -159,9 +159,9 @@
             </div>
 
             <div class="form-group checked">
-              <input type="checkbox" id="input-login-checked" class="login__checkbox">
+              <input type="checkbox" id="input-login-checked__signIn" class="login__checkbox">
               <span class="login__checkmark"></span>
-              <label for="input-login-checked">Remember me</label>
+              <label for="input-login-checked__signIn">Remember me</label>
             </div>
 
           </div>
@@ -209,7 +209,7 @@
               </mat-form-field>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between">
-              <i class="fas fa-id-card prefix grey-text"></i>
+              <i class="fa fa-user prefix grey-text"></i>
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="User name" name="hoTen" ngModel #hoTen="ngModel" required>
                 <mat-error *ngIf="hoTen.errors && (hoTen.dirty || hoTen.touched)">
@@ -218,7 +218,7 @@
               </mat-form-field>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between">
-              <i class="fas fa-id-card prefix grey-text"></i>
+              <i class="fa fa-phone prefix grey-text"></i>
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="Phone number" name="soDT" ngModel #soDT="ngModel" required pattern="[0-9]{10}">
                 <mat-error *ngIf="soDT.errors && (soDT.dirty || soDT.touched)">
@@ -228,7 +228,7 @@
               </mat-form-field>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between">
-              <i class="fas fa-id-card prefix grey-text"></i>
+              <i class="fa fa-envelope prefix grey-text"></i>
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="Email" name="email" ngModel #email="ngModel" required type="email" [email]="true" >
                 <mat-error *ngIf="email.errors && (email.dirty || email.touched)">
@@ -238,9 +238,9 @@
               </mat-form-field>
             </div>
             <div class="form-group checked">
-              <input type="checkbox" id="input-login-checked" class="login__checkbox">
+              <input type="checkbox" id="input-login-checked__signUp" class="login__checkbox">
               <span class="login__checkmark"></span>
-              <label for="input-login-checked">Remember me</label>
+              <label for="input-login-checked__signUp">Remember me</label>
             </div>
 
           </div>

@@ -1,1 +1,71 @@
-<p>edit-profile works!</p>
+<div class="form-section">
+  <form action="" #formEditUser="ngForm" (submit)="editUserClientHandler(formEditUser)">
+    <div class="form-group d-flex align-items-center justify-content-between">
+      <i class="fas fa-id-card prefix grey-text"></i>
+      <input [value]="editUserClient?.taiKhoan" disabled class="inputTaiKhoan">
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between">
+      <i class="fa fa-user prefix grey-text"></i>
+      <mat-form-field class="example-full-width">
+        <!-- hoTen.dirty ? editUserClient?.hoTen: User name -->
+        <mat-label>User name</mat-label>
+        <input matInput  type="text" name="hoTen" [ngModel]="editUserClient?.hoTen" #hoTen="ngModel" required>
+        <mat-error *ngIf="hoTen.errors && (hoTen.dirty || hoTen.touched)">
+          <span *ngIf="hoTen.errors.required">User name is <strong>required</strong></span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between mb-0">
+      <i class="fa fa-lock prefix grey-text"></i>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput name="matKhau" ngModel #matKhau="ngModel" >
+        <!-- <mat-error *ngIf="matKhau?.errors && (matKhau?.dirty || matKhau?.touched)">
+          <span *ngIf="matKhau?.errors?.required">User name is <strong>required</strong></span>
+        </mat-error> -->
+      </mat-form-field>
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-end">
+      <mat-form-field class="example-full-width">
+        <mat-label>Re-type Password</mat-label>
+        <input matInput  placeholder="Re-type your password" name="matKhauRetype" ngModel #matKhauRetype="ngModel">
+        <mat-error *ngIf="true">
+          <span *ngIf="true">Password does not match</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between">
+      <i class="fa fa-phone prefix grey-text"></i>
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput name="soDT" [ngModel]="editUserClient?.soDT" #soDT="ngModel" required>
+        <mat-error *ngIf="soDT.errors && (soDT.dirty || soDT.touched)">
+          <span *ngIf="soDT.errors.required">Phone is <strong>required</strong></span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between">
+      <i class="fa fa-users prefix grey-text"></i>
+      <mat-form-field class="example-full-width">
+        <mat-label>User type</mat-label>
+        <mat-select name="maLoaiNguoiDung" [ngModel]="editUserClient?.maLoaiNguoiDung" #maLoaiNguoiDung="ngModel">
+          <mat-option *ngFor="let item of userType" [value]="item.value">
+            {{item.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput  placeholder="Ex. pat@example.com" name="email" [ngModel]="editUserClient?.email" #email="ngModel" required>
+        <mat-error *ngIf="email.errors && (email.dirty || email.touched)">
+          <span *ngIf="email.errors.required">Email is <strong>required</strong></span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" class="d-block m-auto" type="submit">Accent</button>
+
+  </form>
+</div>

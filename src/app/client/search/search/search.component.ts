@@ -45,12 +45,7 @@ export class SearchComponent implements OnInit{
         console.log(this.courseList);
 
       }), (err) => { console.log(err) }
-
-
-
-
       this._courseService.getCategoriesArr();
-
     }, (err) => { console.log(err) })
 
 
